@@ -1,4 +1,4 @@
-NAME 		:= zombie
+NAME 		:= zombie.out
 
 SRCS		:= main.cpp \
 			   src/Zombie.cpp \
