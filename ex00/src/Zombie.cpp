@@ -6,14 +6,19 @@
 /*   By: coder <coder@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/13 02:18:05 by coder             #+#    #+#             */
-/*   Updated: 2022/02/13 02:45:16 by coder            ###   ########.fr       */
+/*   Updated: 2022/02/13 03:30:20 by coder            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/Zombie.hpp"
 
-Zombie::Zombie( std::string name )
-	: _name(name)
+Zombie::Zombie( void ) : _name("")
+{
+	std::cout << "Void constructor of Zombie called" << std::endl;
+	return ;
+}
+
+Zombie::Zombie( std::string name ) : _name(name)
 {
 	std::cout << "Name constructor of Zombie called" << std::endl;
 	return ;

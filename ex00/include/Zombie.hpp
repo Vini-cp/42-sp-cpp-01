@@ -6,7 +6,7 @@
 /*   By: coder <coder@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/13 02:03:47 by coder             #+#    #+#             */
-/*   Updated: 2022/02/13 02:46:48 by coder            ###   ########.fr       */
+/*   Updated: 2022/02/13 03:30:35 by coder            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,7 @@ class Zombie
 
 	public:
 
+		Zombie( void );
 		Zombie( std::string name );
 		~Zombie( void );
 
