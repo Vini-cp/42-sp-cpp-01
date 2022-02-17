@@ -6,7 +6,7 @@
 /*   By: coder <coder@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/17 18:06:46 by coder             #+#    #+#             */
-/*   Updated: 2022/02/17 18:30:40 by coder            ###   ########.fr       */
+/*   Updated: 2022/02/17 18:39:23 by coder            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,18 @@ Karen::Karen( void )
 Karen::~Karen( void )
 {
 	std::cout << "Destructor called" << std::endl;
+}
+
+static void	complainTitle( std::string str )
+{
+	std::cout << "[ ";
+	for (int i = 0; i < (int) str.length(); i++)
+	{
+		char ch = toupper(str[i]);
+		std::cout << ch;
+	}
+		
+	std::cout << " ]" << std::endl;
 }
 
 void	Karen::complain ( std::string level )
@@ -36,6 +48,7 @@ void	Karen::complain ( std::string level )
 		"warning",
 		"error"
 	};
+	complainTitle( level );
 	for (int i = 0; i < 4; i++)
 	{
 		if (level == complaints[i])
