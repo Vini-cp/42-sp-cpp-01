@@ -24,24 +24,35 @@ FileManip::~FileManip( void )
 	std::cout << "Destructor called" << std::endl;
 }
 
+static std::vector<size_t>	findStr( std::string str, std::string sub)
+{
+	std::vector<size_t> positions;
+	size_t pos = str.find(sub, 0);
+
+	while(pos != std::string::npos)
+	{
+		positions.push_back(pos);
+		pos = str.find(sub, pos + 1);
+	}
+
+	return (positions);
+}
+
 void	FileManip::replace( void )
 {
 	std::string line;
-	size_t	pos;
+	std::vector<size_t> positions;
 	std::ifstream readfile (_filename.c_str());
 	std::ofstream writefile (_replace.c_str());
 	if (readfile.is_open())
 	{
 		while (std::getline(readfile, line))
 		{
+			positions = findStr( line, _s1 );
 			if (writefile.is_open())
 			{
-				pos = line.find(_s1, 0);
-				while(pos != std::string::npos)
-				{
-					line = line.substr(0, pos) + _s2 + line.substr(pos + _s1.length(), line.length() - 1);
-					pos = line.find(_s1, 0);
-				}
+				for (int i = positions.size() - 1; i >= 0; i--)
+					line = line.substr(0, positions[i]) + _s2 + line.substr(positions[i] + _s1.length(), line.length() - 1);
 				writefile << line;
 				writefile << "\n";
 			}
