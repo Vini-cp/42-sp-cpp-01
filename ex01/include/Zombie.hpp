@@ -1,14 +1,5 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   Zombie.hpp                                         :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: coder <coder@student.42.fr>                +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/02/13 02:03:47 by coder             #+#    #+#             */
-/*   Updated: 2022/02/13 03:33:13 by coder            ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
+// Author: vcordeir <vcordeir@student.42sp.org.br>
+// 42 SP
 
 #ifndef ZOMBIE_H
 # define ZOMBIE_H
@@ -17,21 +8,22 @@
 
 class Zombie
 {
-	private:
 
-		std::string		_name;
+public:
 
-	public:
+	Zombie( void );
+	Zombie( std::string pName );
+	~Zombie( void );
 
-		Zombie( void );
-		Zombie( std::string name );
-		~Zombie( void );
+	void setName( std::string pName );
 
-		void	announce( void );
-		void	setName( std::string name );
+	void announce( void ) const;
 
+private:
+
+	std::string mName;
 };
 
-Zombie	*zombieHorde( int N, std::string name );
+Zombie* zombieHorde( int pN, std::string pName );
 
 #endif

@@ -1,30 +1,21 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: coder <coder@student.42.fr>                +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/02/13 02:27:03 by coder             #+#    #+#             */
-/*   Updated: 2022/02/13 03:40:36 by coder            ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
+// Author: vcordeir <vcordeir@student.42sp.org.br>
+// 42 SP
 
 #include "include/Zombie.hpp"
 
-int main(void)
+int main( void )
 {
 	// Creating directly from class
-	Zombie zomb = Zombie("Zombzeras");
-	zomb.announce();
+	Zombie lZombie = Zombie( "Zombzeras" );
+	lZombie.announce();
 	std::cout << std::endl;
 
 	// Using zombieHorde function
-	Zombie *zombies = zombieHorde(5, "ZombNew");
-	for (int i = 0; i < 5; i++)
-		zombies[i].announce();
-	delete[] zombies;
+	Zombie *lpZombies = zombieHorde( 5, "ZombNew" );
+	for ( int i = 0; i < 5; i++ )
+		lpZombies[ i ].announce();
+	delete [] lpZombies;
 	std::cout << std::endl;
 
-	return (0);
+	return 0;
 }

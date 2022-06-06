@@ -1,41 +1,41 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   Zombie.cpp                                         :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: coder <coder@student.42.fr>                +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/02/13 02:18:05 by coder             #+#    #+#             */
-/*   Updated: 2022/02/13 03:36:17 by coder            ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
+// Author: vcordeir <vcordeir@student.42sp.org.br>
+// 42 SP
 
 #include "../include/Zombie.hpp"
 
-Zombie::Zombie( void ) : _name("")
+//------------------------------------------------------------------------------
+
+Zombie::Zombie( void ) : mName( "" )
 {
-	std::cout << "Void constructor of Zombie called" << std::endl;
-	return ;
+	std::cout << "Default constructor of Zombie called" << std::endl;
 }
 
-Zombie::Zombie( std::string name ) : _name(name)
+//------------------------------------------------------------------------------
+
+Zombie::Zombie( std::string pName ) : mName( pName )
 {
 	std::cout << "Name constructor of Zombie called" << std::endl;
-	return ;
 }
+
+//------------------------------------------------------------------------------
 
 Zombie::~Zombie( void )
 {
-	std::cout << "Destructor of Zombie " <<  this->_name << " called" << std::endl;
-	return ;
+	std::cout << "Destructor of Zombie " <<  mName << " called" << std::endl;
 }
 
-void	Zombie::announce( void )
+//------------------------------------------------------------------------------
+
+void Zombie::setName( std::string pName )
 {
-	std::cout << this->_name <<  ": BraiiiiiiinnnzzzZ..." << std::endl;
+	mName = pName;
 }
 
-void	Zombie::setName( std::string name )
+//------------------------------------------------------------------------------
+
+void Zombie::announce( void ) const
 {
-	_name = name;
+	std::cout << mName <<  ": BraiiiiiiinnnzzzZ..." << std::endl;
 }
+
+//------------------------------------------------------------------------------
