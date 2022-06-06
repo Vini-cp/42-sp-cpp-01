@@ -1,14 +1,5 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   Zombie.hpp                                         :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: coder <coder@student.42.fr>                +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/02/13 02:03:47 by coder             #+#    #+#             */
-/*   Updated: 2022/02/13 03:30:35 by coder            ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
+// Author: vcordeir <vcordeir@student.42sp.org.br>
+// 42 SP
 
 #ifndef ZOMBIE_H
 # define ZOMBIE_H
@@ -17,21 +8,21 @@
 
 class Zombie
 {
-	private:
 
-		std::string		_name;
+public:
 
-	public:
+	Zombie( void );
+	Zombie( std::string pName );
+	~Zombie( void );
 
-		Zombie( void );
-		Zombie( std::string name );
-		~Zombie( void );
+	void announce( void );
 
-		void	announce( void );
+private:
 
+	std::string mName;
 };
 
-Zombie	*newZombie( std::string name );
-void	randomChump( std::string name );
+Zombie *newZombie( std::string pName );
+void randomChump( std::string pName );
 
 #endif
