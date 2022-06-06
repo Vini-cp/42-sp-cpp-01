@@ -1,29 +1,21 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: coder <coder@student.42.fr>                +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/02/13 14:45:44 by coder             #+#    #+#             */
-/*   Updated: 2022/02/13 14:53:19 by coder            ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
+// Author: vcordeir <vcordeir@student.42sp.org.br>
+// 42 SP
 
 #include <iostream>
 
-int main(void)
+int main( void )
 {
-	std::string str = "HI THIS IS BRAIN";
-	std::string *stringPTR = &str;
-	std::string &stringREF = str;
+	std::string lString = "HI THIS IS BRAIN";
+	std::string* lpStringPTR = &lString;
+	std::string& lrStringREF = lString;
 
-	std::cout << "The memory address of the string variable: " << &str << std::endl;
-	std::cout << "The memory address held by stringPTR:      " << stringPTR << std::endl;
-	std::cout << "The memory address held by stringREF:      " << &stringREF << std::endl;
+	std::cout << "The memory address of the string variable: " << &lString << std::endl;
+	std::cout << "The memory address held by stringPTR:      " << lpStringPTR << std::endl;
+	std::cout << "The memory address held by stringREF:      " << &lrStringREF << std::endl;
 
-	std::cout << "The value of the string variable:  " << str << std::endl;
-	std::cout << "The value pointed to by stringPTR: " << *stringPTR << std::endl;
-	std::cout << "The value pointed to by stringREF: " << stringREF << std::endl;
-	return (0);
+	std::cout << "The value of the string variable:  " << lString << std::endl;
+	std::cout << "The value pointed to by stringPTR: " << *lpStringPTR << std::endl;
+	std::cout << "The value pointed to by stringREF: " << lrStringREF << std::endl;
+
+	return 0;
 }
