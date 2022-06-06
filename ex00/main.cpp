@@ -3,22 +3,22 @@
 
 #include "include/Zombie.hpp"
 
-int main(void)
+int main( void )
 {
 	// Creating directly from class
-	Zombie zomb = Zombie("Zombzeras");
-	zomb.announce();
+	Zombie lZombie = Zombie( "Zombzeras" );
+	lZombie.announce();
 	std::cout << std::endl;
 
 	// Using newZombie function
-	Zombie *newZomb = newZombie("ZombNew");
-	newZomb->announce();
-	delete newZomb;
+	Zombie *lpZombiePtr = newZombie( "ZombNew" );
+	lpZombiePtr->announce();
+	delete lpZombiePtr;
 	std::cout << std::endl;
 
 	// Using randomChump function
-	randomChump("ZombRandom");
+	randomChump( "ZombRandom" );
 	std::cout << std::endl;
 
-	return (0);
+	return 0;
 }

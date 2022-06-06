@@ -5,6 +5,6 @@
 
 void randomChump( std::string pName )
 {
-	Zombie zombie = Zombie( pName );
-	zombie.announce();
+	Zombie lZombie = Zombie( pName );
+	lZombie.announce();
 }
