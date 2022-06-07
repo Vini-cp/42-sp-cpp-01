@@ -1,8 +1,8 @@
 // Author: vcordeir <vcordeir@student.42sp.org.br>
 // 42 SP
 
-# include "./include/HumanA.hpp"
-# include "./include/HumanB.hpp"
+# include "./include/HumanA.h"
+# include "./include/HumanB.h"
 
 int main( void )
 {

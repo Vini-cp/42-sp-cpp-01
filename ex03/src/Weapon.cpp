@@ -1,7 +1,7 @@
 // Author: vcordeir <vcordeir@student.42sp.org.br>
 // 42 SP
 
-#include "../include/Weapon.hpp"
+#include "../include/Weapon.h"
 
 //------------------------------------------------------------------------------
 

@@ -1,7 +1,7 @@
 // Author: vcordeir <vcordeir@student.42sp.org.br>
 // 42 SP
 
-#include "../include/HumanB.hpp"
+#include "../include/HumanB.h"
 
 //------------------------------------------------------------------------------
 

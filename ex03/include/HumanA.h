@@ -4,7 +4,7 @@
 #ifndef HUMANA_H
 # define HUMANA_H
 
-# include "Weapon.hpp"
+# include "Weapon.h"
 
 class HumanA
 {

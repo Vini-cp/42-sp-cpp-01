@@ -4,7 +4,7 @@
 #ifndef HUMANB_H
 # define HUMANB_H
 
-# include "Weapon.hpp"
+# include "Weapon.h"
 
 class HumanB
 {
