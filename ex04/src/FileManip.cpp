@@ -1,67 +1,77 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   FileManip.cpp                                      :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: coder <coder@student.42.fr>                +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/02/17 01:26:46 by coder             #+#    #+#             */
-/*   Updated: 2022/02/17 12:54:58 by coder            ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
+// Author: vcordeir <vcordeir@student.42sp.org.br>
+// 42 SP
 
 #include "../include/FileManip.hpp"
 
-FileManip::FileManip( std::string filename, std::string s1, std::string s2 )
-	: _filename(filename), _s1(s1), _s2(s2)
+//------------------------------------------------------------------------------
+
+FileManip::FileManip( std::string pFilename, std::string pSearchValue, std::string pNewValue ) :
+	mInputFileName( pFilename ),
+	mSearchValue( pSearchValue ),
+	mNewValue( pNewValue )
 {
-	_replace = filename + ".replace";
-	std::cout << "Constructor called" << std::endl;
+	mOutputFileName = pFilename + ".replace";
+	mSearchValueLength = pSearchValue.length();
+	mNewValueLength = pNewValue.length();
+
+	std::cout << "Default constructor called" << std::endl;
 }
+
+//------------------------------------------------------------------------------
 
 FileManip::~FileManip( void )
 {
 	std::cout << "Destructor called" << std::endl;
 }
 
-static std::vector<size_t>	findStr( std::string str, std::string sub)
+//------------------------------------------------------------------------------
+
+void FileManip::replace( void )
 {
-	std::vector<size_t> positions;
-	size_t pos = str.find(sub, 0);
+	std::ifstream lInputFile ( mInputFileName.c_str() );
+	std::ofstream lOutputFile ( mOutputFileName.c_str() );
 
-	while(pos != std::string::npos)
+	if ( !checkStreamFiles( lInputFile, lOutputFile ) ) return;
+
+	std::string lLine;
+	while ( std::getline( lInputFile, lLine ) )
 	{
-		positions.push_back(pos);
-		pos = str.find(sub, pos + 1);
-	}
-
-	return (positions);
-}
-
-void	FileManip::replace( void )
-{
-	std::string line;
-	std::vector<size_t> positions;
-	std::ifstream readfile (_filename.c_str());
-	std::ofstream writefile (_replace.c_str());
-	if (readfile.is_open())
-	{
-		while (std::getline(readfile, line))
+		std::string lNewLine = "";
+		for ( size_t i = 0; i < lLine.length(); )
 		{
-			positions = findStr( line, _s1 );
-			if (writefile.is_open())
+			if ( mSearchValue.compare( lLine.substr( i, mSearchValueLength ) ) == 0 )
 			{
-				for (int i = positions.size() - 1; i >= 0; i--)
-					line = line.substr(0, positions[i]) + _s2 + line.substr(positions[i] + _s1.length(), line.length() - 1);
-				writefile << line;
-				writefile << "\n";
+				lNewLine += mNewValue;
+				i += mSearchValueLength;
 			}
 			else
-				std::cout << "Unable to open file";
+			{
+				lNewLine += lLine[i];
+				i++;
+			}
 		}
-		writefile.close();
-		readfile.close();
+		lOutputFile << lNewLine;
+		lOutputFile << '\n';
 	}
-	else
-		std::cout << "Unable to open file" << std::endl;
+	lInputFile.close();
+	lOutputFile.close();
 }
+
+//------------------------------------------------------------------------------
+
+bool FileManip::checkStreamFiles( std::ifstream& prInputFile, std::ofstream& prOutputFile )
+{
+	if ( !prInputFile.is_open() )
+	{
+		std::cout << "Unable to open " << mInputFileName << std::endl;
+		return false;
+	}
+	if ( !prOutputFile.is_open() )
+	{
+		std::cout << "Unable to open " << mOutputFileName << std::endl;
+		return false;
+	}
+	return true;
+}
+
+//------------------------------------------------------------------------------

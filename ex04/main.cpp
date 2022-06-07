@@ -1,14 +1,5 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: coder <coder@student.42.fr>                +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/02/17 01:36:28 by coder             #+#    #+#             */
-/*   Updated: 2022/02/17 13:15:18 by coder            ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
+// Author: vcordeir <vcordeir@student.42sp.org.br>
+// 42 SP
 
 #include "./include/FileManip.hpp"
 
@@ -22,5 +13,5 @@ int main ( int argc, char **argv )
 	}
 	FileManip manip = FileManip(argv[1], argv[2], argv[3]);
 	manip.replace();
-	return (0);
+	return 0;
 }
