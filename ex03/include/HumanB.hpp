@@ -1,14 +1,5 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   HumanB.hpp                                         :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: coder <coder@student.42.fr>                +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/02/13 15:49:20 by coder             #+#    #+#             */
-/*   Updated: 2022/02/13 15:56:02 by coder            ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
+// Author: vcordeir <vcordeir@student.42sp.org.br>
+// 42 SP
 
 #ifndef HUMANB_H
 # define HUMANB_H
@@ -17,18 +8,19 @@
 
 class HumanB
 {
-	private:
+public:
 
-		std::string	_name;
-		Weapon		*_weapon;
+	HumanB( std::string pName );
+	~HumanB( void );
 
-	public:
+	void	attack( void ) const;
 
-		HumanB( std::string name );
-		~HumanB( void );
+	void	setWeapon( Weapon* ppWeapon );
 
-		void	attack( void );
-		void	setWeapon( Weapon &weapon );
+private:
+
+	std::string mName;
+	Weapon* mpWeapon;
 };
 
 #endif

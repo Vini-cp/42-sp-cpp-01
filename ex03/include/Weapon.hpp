@@ -1,14 +1,5 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   Weapon.hpp                                         :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: coder <coder@student.42.fr>                +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/02/13 14:59:08 by coder             #+#    #+#             */
-/*   Updated: 2022/02/13 15:31:02 by coder            ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
+// Author: vcordeir <vcordeir@student.42sp.org.br>
+// 42 SP
 
 #ifndef WEAPON_H
 # define WEAPON_H
@@ -17,19 +8,18 @@
 
 class Weapon
 {
-	private:
+public:
 
-		std::string		_type;
+	Weapon( void );
+	Weapon( std::string pType );
+	~Weapon( void );
 
-	public:
+	const std::string& getType( void ) const;
+	void setType( const std::string pType );
 
-		Weapon( void );
-		Weapon( std::string type );
-		~Weapon( void );
+private:
 
-		const std::string&	getType( void );
-		void				setType( std::string type );
-
+	std::string mType;
 };
 
 #endif

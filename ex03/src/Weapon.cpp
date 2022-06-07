@@ -1,41 +1,41 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   Weapon.cpp                                         :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: coder <coder@student.42.fr>                +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/02/13 14:59:10 by coder             #+#    #+#             */
-/*   Updated: 2022/02/13 15:48:04 by coder            ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
+// Author: vcordeir <vcordeir@student.42sp.org.br>
+// 42 SP
 
 #include "../include/Weapon.hpp"
 
-Weapon::Weapon( void ) : _type("")
+//------------------------------------------------------------------------------
+
+Weapon::Weapon( void ) : mType( "" )
 {
-	std::cout << "Void constructor of Weapon called" << std::endl;
-	return ;
+	std::cout << "Default constructor of Weapon called" << std::endl;
 }
 
-Weapon::Weapon( std::string type ) : _type(type)
+//------------------------------------------------------------------------------
+
+Weapon::Weapon( std::string pType ) : mType( pType )
 {
 	std::cout << "Constructor of Weapon called" << std::endl;
-	return ;
 }
+
+//------------------------------------------------------------------------------
 
 Weapon::~Weapon( void )
 {
-	std::cout << "Destructor of Weapon " <<  this->_type << " called" << std::endl;
-	return ;
+	std::cout << "Destructor of Weapon " << mType << " called" << std::endl;
 }
 
-const std::string&	Weapon::getType( void )
+//------------------------------------------------------------------------------
+
+const std::string& Weapon::getType( void ) const
 {
-	return (this->_type);
+	return mType;
 }
 
-void	Weapon::setType( std::string type )
+//------------------------------------------------------------------------------
+
+void	Weapon::setType( const std::string pType )
 {
-	_type = type;
+	mType = pType;
 }
+
+//------------------------------------------------------------------------------

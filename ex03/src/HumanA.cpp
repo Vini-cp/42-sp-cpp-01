@@ -1,30 +1,29 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   HumanA.cpp                                         :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: coder <coder@student.42.fr>                +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/02/13 15:20:43 by coder             #+#    #+#             */
-/*   Updated: 2022/02/13 15:37:28 by coder            ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
+// Author: vcordeir <vcordeir@student.42sp.org.br>
+// 42 SP
 
 #include "../include/HumanA.hpp"
 
-HumanA::HumanA( std::string name, Weapon &weapon ) : _name(name), _weapon(weapon)
+//------------------------------------------------------------------------------
+
+HumanA::HumanA( std::string pName, Weapon& prWeapon ) :
+	mName( pName ),
+	mrWeapon( prWeapon )
 {
 	std::cout << "Constructor of HumanA called" << std::endl;
-	return ;
 }
+
+//------------------------------------------------------------------------------
 
 HumanA::~HumanA( void )
 {
-	std::cout << "Destructor of HumanA " <<  this->_name << " called" << std::endl;
-	return ;
+	std::cout << "Destructor of HumanA " <<  mName << " called" << std::endl;
 }
 
-void	HumanA::attack( void )
+//------------------------------------------------------------------------------
+
+void HumanA::attack( void ) const
 {
-	std::cout << this->_name << " attacks with their " << _weapon.getType() << std::endl;
+	std::cout << mName << " attacks with their " << mrWeapon.getType() << std::endl;
 }
+
+//------------------------------------------------------------------------------

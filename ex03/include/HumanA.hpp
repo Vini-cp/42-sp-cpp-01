@@ -1,14 +1,5 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   HumanA.hpp                                         :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: coder <coder@student.42.fr>                +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/02/13 15:13:33 by coder             #+#    #+#             */
-/*   Updated: 2022/02/13 15:46:36 by coder            ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
+// Author: vcordeir <vcordeir@student.42sp.org.br>
+// 42 SP
 
 #ifndef HUMANA_H
 # define HUMANA_H
@@ -17,17 +8,17 @@
 
 class HumanA
 {
-	private:
+public:
 
-		std::string	_name;
-		Weapon		&_weapon;
+	HumanA( const std::string pName, Weapon& prWeapon );
+	~HumanA( void );
 
-	public:
+	void attack( void ) const;
 
-		HumanA( std::string name, Weapon &weapon );
-		~HumanA( void );
+private:
 
-		void	attack( void );
+	std::string	mName;
+	Weapon& mrWeapon;
 };
 
 #endif

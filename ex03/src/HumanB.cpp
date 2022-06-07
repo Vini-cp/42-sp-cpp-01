@@ -1,35 +1,37 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   HumanB.cpp                                         :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: coder <coder@student.42.fr>                +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/02/13 15:50:17 by coder             #+#    #+#             */
-/*   Updated: 2022/02/13 15:57:48 by coder            ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
+// Author: vcordeir <vcordeir@student.42sp.org.br>
+// 42 SP
 
 #include "../include/HumanB.hpp"
 
-HumanB::HumanB( std::string name ) : _name(name)
+//------------------------------------------------------------------------------
+
+HumanB::HumanB( std::string pName ) : mName( pName )
 {
 	std::cout << "Constructor of HumanB called" << std::endl;
-	return ;
 }
+
+//------------------------------------------------------------------------------
 
 HumanB::~HumanB( void )
 {
-	std::cout << "Destructor of HumanB " <<  this->_name << " called" << std::endl;
-	return ;
+	std::cout << "Destructor of HumanB " <<  mName << " called" << std::endl;
 }
 
-void	HumanB::attack( void )
+//------------------------------------------------------------------------------
+
+void HumanB::attack( void ) const
 {
-	std::cout << this->_name << " attacks with their " << _weapon->getType() << std::endl;
+	if ( mpWeapon )
+	{
+		std::cout << mName << " attacks with their " << mpWeapon->getType() << std::endl;
+	}
 }
 
-void	HumanB::setWeapon( Weapon &weapon )
+//------------------------------------------------------------------------------
+
+void HumanB::setWeapon( Weapon* ppWeapon )
 {
-	_weapon = &weapon;
+	mpWeapon = ppWeapon;
 }
+
+//------------------------------------------------------------------------------
