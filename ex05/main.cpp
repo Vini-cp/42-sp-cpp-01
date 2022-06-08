@@ -1,22 +1,13 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: coder <coder@student.42.fr>                +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/02/17 18:28:23 by coder             #+#    #+#             */
-/*   Updated: 2022/02/17 18:30:43 by coder            ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
+// Author: vcordeir <vcordeir@student.42sp.org.br>
+// 42 SP
 
-#include "./include/Karen.hpp"
+#include "./include/Karen.h"
 
 int main ( void )
 {
-	Karen crazyKaren = Karen();
-	crazyKaren.complain("debug");
-	crazyKaren.complain("info");
-	crazyKaren.complain("warning");
-	crazyKaren.complain("error");
+    Karen crazyKaren = Karen();
+    crazyKaren.complain("DEBUG");
+    crazyKaren.complain("INFO");
+    crazyKaren.complain("WARNING");
+    crazyKaren.complain("ERROR");
 }
