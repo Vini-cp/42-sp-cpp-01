@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: coder <coder@student.42.fr>                +#+  +:+       +#+        */
+/*   By: vcordeir <vcordeir@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/17 18:28:23 by coder             #+#    #+#             */
-/*   Updated: 2022/02/17 19:04:47 by coder            ###   ########.fr       */
+/*   Updated: 2022/06/08 02:23:14 by vcordeir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "./include/Karen.hpp"
+#include "./include/Karen.h"
 
-int main ( int argc, char **argv )
+int main( int argc, char **argv )
 {
 	Karen crazyKaren = Karen();
 	if (argc != 2)
