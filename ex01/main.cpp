@@ -5,17 +5,32 @@
 
 int main( void )
 {
-	// Creating directly from class
-	Zombie lZombie = Zombie( "Zombzeras" );
-	lZombie.announce();
-	std::cout << std::endl;
+    {
+        std::cout << std::endl << "============== A Zombie ==============" << std::endl;
 
-	// Using zombieHorde function
-	Zombie *lpZombies = zombieHorde( 5, "ZombNew" );
-	for ( int i = 0; i < 5; i++ )
-		lpZombies[ i ].announce();
-	delete [] lpZombies;
-	std::cout << std::endl;
+        Zombie lZombie = Zombie( "Zombiiiiie" );
 
-	return 0;
+        lZombie.announce();
+    }
+
+    std::cout << "======================================" << std::endl << std::endl;
+    
+    {
+        std::cout << "=============== Horde ================" << std::endl;
+
+        const int N = 5;
+
+        Zombie *lpZombies = zombieHorde( N, "ZombNew" );
+
+        for ( int i = 0; i < N; i++ )
+        {
+            lpZombies[ i ].announce();
+        }
+
+        delete[] lpZombies;
+        
+        std::cout << "======================================" << std::endl;
+    }
+    
+    return 0;
 }

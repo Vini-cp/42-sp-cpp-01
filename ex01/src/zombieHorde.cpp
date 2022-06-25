@@ -3,12 +3,14 @@
 
 #include "../include/Zombie.h"
 
-Zombie* zombieHorde( int pN, std::string pName )
+Zombie* zombieHorde( int N, std::string pName )
 {
-	Zombie* lpZombie = new Zombie[ pN ];
+    Zombie* lpZombie = new Zombie[ N ];
 
-	for ( int i = 0; i < pN; i++ )
-		lpZombie[ i ].setName( pName );
+    for ( int i = 0; i < N; i++ )
+    {
+        lpZombie[ i ].setName( pName );
+    }
 
-	return lpZombie;
+    return lpZombie;
 }
