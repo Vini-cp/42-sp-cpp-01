@@ -5,20 +5,20 @@
 
 int main( void )
 {
-	// Creating directly from class
-	Zombie lZombie = Zombie( "Zombzeras" );
-	lZombie.announce();
-	std::cout << std::endl;
+    // Creating directly from class
+    Zombie lZombie = Zombie( "Zombiiiie" );
+    lZombie.announce();
+    std::cout << std::endl;
 
-	// Using newZombie function
-	Zombie *lpZombiePtr = newZombie( "ZombNew" );
-	lpZombiePtr->announce();
-	delete lpZombiePtr;
-	std::cout << std::endl;
+    // Using newZombie function
+    Zombie *lpZombiePtr = newZombie( "ZombNew" );
+    lpZombiePtr->announce();
+    delete lpZombiePtr;
+    std::cout << std::endl;
 
-	// Using randomChump function
-	randomChump( "ZombRandom" );
-	std::cout << std::endl;
+    // Using randomChump function
+    randomChump( "ZombRandom" );
+    std::cout << std::endl;
 
-	return 0;
+    return 0;
 }
