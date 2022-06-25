@@ -2,23 +2,23 @@
 // 42 SP
 
 #ifndef HUMANA_H
-# define HUMANA_H
+#define HUMANA_H
 
-# include "Weapon.h"
+#include "Weapon.h"
 
 class HumanA
 {
 public:
 
-	HumanA( const std::string pName, Weapon& prWeapon );
-	~HumanA( void );
+    HumanA( const std::string pName, Weapon& prWeapon );
+    ~HumanA( void );
 
-	void attack( void ) const;
+    void attack( void ) const;
 
 private:
 
-	std::string	mName;
-	Weapon& mrWeapon;
+    std::string	mName;
+    Weapon& mrWeapon;
 };
 
 #endif

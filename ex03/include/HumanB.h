@@ -2,25 +2,25 @@
 // 42 SP
 
 #ifndef HUMANB_H
-# define HUMANB_H
+#define HUMANB_H
 
-# include "Weapon.h"
+#include "Weapon.h"
 
 class HumanB
 {
 public:
 
-	HumanB( std::string pName );
-	~HumanB( void );
+    HumanB( std::string pName );
+    ~HumanB( void );
 
-	void	attack( void ) const;
+    void attack( void ) const;
 
-	void	setWeapon( Weapon* ppWeapon );
+    void setWeapon( Weapon* ppWeapon );
 
 private:
 
-	std::string mName;
-	Weapon* mpWeapon;
+    std::string mName;
+    Weapon* mpWeapon;
 };
 
 #endif

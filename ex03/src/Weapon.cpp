@@ -7,35 +7,35 @@
 
 Weapon::Weapon( void ) : mType( "" )
 {
-	std::cout << "Default constructor of Weapon called" << std::endl;
+    std::cout << "Default constructor of Weapon called" << std::endl;
 }
 
 //------------------------------------------------------------------------------
 
 Weapon::Weapon( std::string pType ) : mType( pType )
 {
-	std::cout << "Constructor of Weapon called" << std::endl;
+    std::cout << "Constructor of Weapon called" << std::endl;
 }
 
 //------------------------------------------------------------------------------
 
 Weapon::~Weapon( void )
 {
-	std::cout << "Destructor of Weapon " << mType << " called" << std::endl;
+    std::cout << "Destructor of Weapon " << mType << " called" << std::endl;
 }
 
 //------------------------------------------------------------------------------
 
 const std::string& Weapon::getType( void ) const
 {
-	return mType;
+    return mType;
 }
 
 //------------------------------------------------------------------------------
 
-void	Weapon::setType( const std::string pType )
+void Weapon::setType( const std::string pType )
 {
-	mType = pType;
+    mType = pType;
 }
 
 //------------------------------------------------------------------------------
