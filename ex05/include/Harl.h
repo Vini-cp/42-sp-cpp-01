@@ -1,24 +1,24 @@
 // Author: vcordeir <vcordeir@student.42sp.org.br>
 // 42 SP
 
-#ifndef KAREN_H
-# define KAREN_H
+#ifndef HARL_H
+#define HARL_H
 
-# include <iostream>
+#include <iostream>
 
-class Karen
+class Harl
 {
 public:
 
-    Karen( void );
-    ~Karen( void );
+    Harl( void );
+    ~Harl( void );
 
     void complain ( std::string level );
 
 private:
     std::string	mComplaintsLevel[ 4 ];
-    void ( Karen::*mpKarenComplaints[ 4 ] )( void );
-    
+    void ( Harl::*mpHarlComplaints[ 4 ] )( void );
+
     void debug( void );
     void info( void );
     void warning( void );

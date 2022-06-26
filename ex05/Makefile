@@ -1,7 +1,7 @@
-NAME 		:= karen
+NAME 		:= harl
 
 SRCS		:= main.cpp \
-			   src/Karen.cpp
+			   src/Harl.cpp
 
 SRC_FOLDER 	:= src
 
