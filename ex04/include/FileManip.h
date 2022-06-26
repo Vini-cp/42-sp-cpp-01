@@ -2,31 +2,32 @@
 // 42 SP
 
 #ifndef FILEMANIP_H
-# define FILEMANIP_H
+#define FILEMANIP_H
 
-# include <iostream>
-# include <fstream>
-# include <string>
+#include <fstream>
+#include <iostream>
+#include <string>
 
 class FileManip
 {
 public:
 
-	FileManip( std::string pFilename, std::string pSearchValue, std::string pNewValue );
-	~FileManip( void );
+    FileManip( std::string pFilename, std::string pSearchValue, std::string pNewValue );
+    ~FileManip( void );
 
-	void	replace( void );
+    void replace( void );
 
 private:
 
-	std::string mInputFileName;
-	std::string mOutputFileName;
-	std::string mSearchValue;
-	std::string mNewValue;
-	size_t mSearchValueLength;
-	size_t mNewValueLength;
+    std::string mInputFileName;
+    std::string mOutputFileName;
+    std::string mSearchValue;
+    std::string mNewValue;
+    size_t mSearchValueLength;
+    size_t mNewValueLength;
 
-	bool checkStreamFiles( std::ifstream& prInputFile, std::ofstream& prOutputFile );
+    bool checkStreamFile( std::ifstream& prInputFile );
+    bool checkStreamFile( std::ofstream& prOutputFile );
 };
 
 #endif
