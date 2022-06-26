@@ -1,21 +1,13 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: vcordeir <vcordeir@student.42sp.org.br>    +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/02/17 18:28:23 by coder             #+#    #+#             */
-/*   Updated: 2022/06/08 02:23:14 by vcordeir         ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
+// Author: vcordeir <vcordeir@student.42sp.org.br>
+// 42 SP
 
-#include "./include/Karen.h"
+#include "./include/Harl.h"
 
 int main( int argc, char **argv )
 {
-	Karen crazyKaren = Karen();
-	if (argc != 2)
-		return (0);
-	crazyKaren.complain(argv[1]);
+    if ( argc != 2 )
+        return 0;
+
+    Harl crazyHarl = Harl();
+    crazyHarl.complain( argv[ 1 ] );
 }

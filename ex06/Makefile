@@ -1,7 +1,7 @@
-NAME 		:= karenFilter
+NAME 		:= harlFilter
 
 SRCS		:= main.cpp \
-			   src/Karen.cpp
+			   src/Harl.cpp
 
 SRC_FOLDER 	:= src
 

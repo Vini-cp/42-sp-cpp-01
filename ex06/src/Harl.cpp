@@ -1,11 +1,11 @@
 // Author: vcordeir <vcordeir@student.42sp.org.br>
 // 42 SP
 
-#include "../include/Karen.h"
+#include "../include/Harl.h"
 
 //------------------------------------------------------------------------------
 
-Karen::Karen( void )
+Harl::Harl( void )
 {
     mComplaintsLevel[ 0 ] = "DEBUG";
     mComplaintsLevel[ 1 ] = "INFO";
@@ -16,18 +16,19 @@ Karen::Karen( void )
 
 //------------------------------------------------------------------------------
 
-Karen::~Karen( void )
+Harl::~Harl( void )
 {
     std::cout << "Destructor called" << std::endl;
 }
 
 //------------------------------------------------------------------------------
 
-void Karen::complain( std::string pLevel )
+void Harl::complain( std::string pLevel )
 {
     int lLogLevel = findLogLevel( pLevel );
 
-    switch( lLogLevel ) {
+    switch( lLogLevel )
+    {
         case 0:
             debug();
 
@@ -48,7 +49,7 @@ void Karen::complain( std::string pLevel )
 
 //------------------------------------------------------------------------------
 
-int Karen::findLogLevel ( std::string pLevel )
+int Harl::findLogLevel ( std::string pLevel )
 {
     for ( int i = 0; i < 4; i++ )
     {
@@ -60,7 +61,7 @@ int Karen::findLogLevel ( std::string pLevel )
 
 //------------------------------------------------------------------------------
 
-void Karen::debug( void )
+void Harl::debug( void )
 {
     std::cout << "[ DEBUG ]" << std::endl;
     std::cout << "I love having extra bacon for my " 
@@ -71,7 +72,7 @@ void Karen::debug( void )
 
 //------------------------------------------------------------------------------
 
-void Karen::info( void )
+void Harl::info( void )
 {
     std::cout << "[ INFO ]" << std::endl;
     std::cout << "I cannot believe adding extra bacon costs more money. "
@@ -82,7 +83,7 @@ void Karen::info( void )
 
 //------------------------------------------------------------------------------
 
-void Karen::warning( void )
+void Harl::warning( void )
 {
     std::cout << "[ WARNING ]" << std::endl;
     std::cout << "I think I deserve to have some extra bacon for free. "
@@ -93,7 +94,7 @@ void Karen::warning( void )
 
 //------------------------------------------------------------------------------
 
-void Karen::error( void )
+void Harl::error( void )
 {
     std::cout << "[ ERROR ]" << std::endl;
     std::cout << "This is unacceptable! I want to speak to the manager now.\n"

@@ -1,17 +1,17 @@
 // Author: vcordeir <vcordeir@student.42sp.org.br>
 // 42 SP
 
-#ifndef KAREN_H
-# define KAREN_H
+#ifndef HARL_H
+#define HARL_H
 
-# include <iostream>
+#include <iostream>
 
-class Karen
+class Harl
 {
 public:
 
-    Karen( void );
-    ~Karen( void );
+    Harl( void );
+    ~Harl( void );
 
     void complain( std::string pLevel );
 
